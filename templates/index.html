@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <div class="jumbotron">
+    Upload a video
+    </div>
+</head>
+    <div class="jumbotron">
+    <form class="form-group" action="{{url_for('Videos.Video2')}}" method="post" enctype="multipart/form-data">
+        <input class="form-control" type="file" name="video">
+        <input class="form-control" type="text" placeholder="videoname" name="videoname">
+        <input class="form-control" type="number" placeholder="visibility 1->visible to all users and 0->visible only to users selected below" name="visibility" min="0" max="1" id="visibilityid">
+        <!-- <input class="form-control" type="text" placeholder="accesses-> list userids of people you want to give access to" name="accesses" id="accesses"> -->
+        <div class="form-group">
+            <label for="users-dropdown">Select users:</label>
+            <select class="form-control" id="users-dropdown" name="users[]" multiple>
+              {% for user in all_users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          
+        <input class="form-control" type="submit" value="Upload">
+    </form>
+    </div>
+{% endblock content %}

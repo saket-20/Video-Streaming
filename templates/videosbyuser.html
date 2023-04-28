@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<html>
+
+
+
+<table class="table table-dark table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Video Name</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for vid in videosbyuser %}
+<tr>
+<td> {{vid.videoname}}           </td>
+<td> <form  method="POST" action="{{url_for('Videos.Video1',video_id=vid.id)}}">
+    <!-- <input type="hidden" name="_method" value="DELETE" id=""> -->
+    <input type="submit" name="deletevid" value= "Delete" id="">
+</form> </td>
+</tr>
+{% endfor %}
+    </tbody>
+    </table>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

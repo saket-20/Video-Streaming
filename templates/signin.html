@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head></head>
+<body>
+    <form class="form-group" action="{{url_for('Users.UserLogin')}}" method="post">
+        <input class="form-control" type="text" name="username" placeholder="username" value="" id="">
+        <input class="form-control" type="password" name="password" placeholder="password" value="" id="">
+        <input class="form-control" type="submit" name="login">
+    </form>
+    
+</body>
+</html>
+{% endblock content %}
