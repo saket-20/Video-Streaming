@@ -1,7 +1,7 @@
 # Video-Streaming
 Video Streaming Application capable of streaming large video files chunk by chunk and also allows video owners to restrict access
 
-##Restricting Access  
+## Restricting Access  
 
 While Uploading, the owner has an option to make the video private or public.  
 Public videos can be streamed by everyone registered with the app.  
